@@ -51,11 +51,31 @@ public class Classwork {
     return start;
   }
 
+  public static boolean test(int[] data, int k, int start, int end) {
+      for (int i = start; i < end; i++) {
+          if (i < k) {
+              if (data[i] > data[k]) {
+                  return false;
+              }
+          } else if (i > k) {
+              if (data[i] < data[k]) {
+                  return false;
+              }
+          }
+      }
+      return true;
+  }
+
   public static void main(String[] args) {
     int[] b = {1,2};
     // System.out.println(makeAllWords(3,3));
     // System.out.println(makeAllWords(4,2));
     // System.out.println(makeAllWords(1,26));
     System.out.println(partition(b,2,9));
+
+    int[] data1 = {10, 80, 30, 90, 40, 50, 70};
+    //System.out.println(Arrays.toString(data1));
+    int index1a = partition(data1, 0, 6);
+    System.out.println("1a: " + test(data1, index1a,0,6));
   }
 }
