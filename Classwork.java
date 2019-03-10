@@ -1,6 +1,7 @@
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Arrays;
 
 public class Classwork {
 
@@ -25,11 +26,18 @@ public class Classwork {
     Random rand = new Random();
     int s = start;
     int x = rand.nextInt(end+1-start) + start;
+    System.out.println("array current status: " + Arrays.toString(data));
+    int target = data[x];
+    data[x] = data[start];
+    data[start] = target;
+    start+=1;
+    System.out.println("array current status: " + Arrays.toString(data));
+    System.out.println("target: " + target);
     while (start != end) {
-      target = data[x];
-      data[x] = data[start];
-      data[start] = target;
-      start+=1;
+      System.out.println("array current status: " + Arrays.toString(data));
+      System.out.println("end: " + end);
+      System.out.println("start: " + start);
+      System.out.println("length of data: " + data.length);
       if (data[start] > target) {
         int temp = data[end];
         data[end] = data[start];
@@ -67,15 +75,21 @@ public class Classwork {
   }
 
   public static void main(String[] args) {
-    int[] b = {1,2};
+    // int[] b = {1,2};
     // System.out.println(makeAllWords(3,3));
     // System.out.println(makeAllWords(4,2));
     // System.out.println(makeAllWords(1,26));
-    System.out.println(partition(b,2,9));
+    // System.out.println(partition(b,2,9));
 
     int[] data1 = {10, 80, 30, 90, 40, 50, 70};
     //System.out.println(Arrays.toString(data1));
     int index1a = partition(data1, 0, 6);
     System.out.println("1a: " + test(data1, index1a,0,6));
+    System.out.println(Arrays.toString(data1) + " "+index1a+"\n");
+    System.out.println(Arrays.toString(data1));
+
+    int index1b = partition(data1, 2, 5);
+    System.out.println("1b: " + test(data1, index1b,2,5));
+    System.out.println(Arrays.toString(data1) + " "+index1b+"\n");
   }
 }
