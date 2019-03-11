@@ -26,8 +26,6 @@ public class Classwork {
     Random rand = new Random();
     int s = start;
     int x = rand.nextInt(end+1-start) + start;
-    System.out.println("array current status: " + Arrays.toString(data));
-    System.out.println("index that we want: " + x);
     int target = data[x];
     data[x] = data[start];
     data[start] = target;
@@ -35,13 +33,7 @@ public class Classwork {
     if (start!= end) {
       start+=1;
     }
-    System.out.println("array current status: " + Arrays.toString(data));
-    System.out.println("target: " + target);
     while (start != end) {
-      System.out.println("array current status: " + Arrays.toString(data));
-      System.out.println("end: " + end);
-      System.out.println("start: " + start);
-      System.out.println("length of data: " + data.length);
       if (data[start] >= target) {
         int temp = data[end];
         data[end] = data[start];
@@ -95,29 +87,29 @@ public class Classwork {
     System.out.println(Arrays.toString(data1) + " "+index1a+"\n");
     // System.out.println(Arrays.toString(data1));
 
-    // int index1b = partition(data1, 2, 5);
-    // System.out.println("1b: " + test(data1, index1b,2,5));
-    // // System.out.println(Arrays.toString(data1) + " "+index1b+"\n");
-    //
-    // int[] data2 = {6, 3, 7, -1, 7, 4, 10, -21};
-    // int index2a = partition(data2, 2, 7);
-    // System.out.println("2a: " + test(data2, index2a,2,7));
-    // System.out.println(Arrays.toString(data2));
-    //
-    // int index2b = partition(data2, 1, 4);
-    // System.out.println("2b: " + test(data2, index2b,1,4));
-    //
-    // int[] data3 = {78};
-    // //System.out.println(Arrays.toString(data3));
-    // int index3 = partition(data3, 0, 0);
-    // System.out.println("3: " + test(data3, index3,0,0));
-    // //System.out.println(Arrays.toString(data3) + "\n");
-    //
-    // int[] data4 = {3, 1};
-    // int index4 = partition(data4, 0, 1);
-    // //System.out.println(Arrays.toString(data4));
-    // System.out.println("4: " + test(data4, index4,0,1));
-    //System.out.println(Arrays.toString(data4) + "\n");
+    int index1b = partition(data1, 2, 5);
+    System.out.println("1b: " + test(data1, index1b,2,5));
+    // System.out.println(Arrays.toString(data1) + " "+index1b+"\n");
+
+    int[] data2 = {6, 3, 7, -1, 7, 4, 10, -21};
+    int index2a = partition(data2, 2, 7);
+    System.out.println("2a: " + test(data2, index2a,2,7));
+    System.out.println(Arrays.toString(data2));
+
+    int index2b = partition(data2, 1, 4);
+    System.out.println("2b: " + test(data2, index2b,1,4));
+
+    int[] data3 = {78};
+    //System.out.println(Arrays.toString(data3));
+    int index3 = partition(data3, 0, 0);
+    System.out.println("3: " + test(data3, index3,0,0));
+    //System.out.println(Arrays.toString(data3) + "\n");
+
+    int[] data4 = {3, 1};
+    int index4 = partition(data4, 0, 1);
+    //System.out.println(Arrays.toString(data4));
+    System.out.println("4: " + test(data4, index4,0,1));
+    System.out.println(Arrays.toString(data4) + "\n");
     //
     // for (int i = 0; i < 100; i++) {
     //     try {
